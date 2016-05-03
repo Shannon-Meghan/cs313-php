@@ -1,0 +1,85 @@
+html {
+	padding-left: 300px;
+}
+body {
+	background-color: white;
+    padding-left: 200px;
+	padding-right: 500px;
+	border-radius: 25px;
+	border: 2px solid #73AD21;
+	width: 500px;
+	height: 1000px;
+	background-position: center;
+}
+
+nav {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+}
+
+li.nav_li {
+	border: 1px solid #FFFDE8;
+	background-color: #E8F5FF;
+	list-style-type: none;
+	width: 90px;
+	float: left;
+}
+
+ul.nav_ul {
+	padding: 0;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+li a  {
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:link {
+    text-decoration: none;
+	color: #B98D20;
+}
+
+a:visited {
+    text-decoration: none;
+	color: #B98D20;
+}
+
+a:hover {
+    text-decoration: underline;
+	color: #B98D20;
+}
+
+a:active {
+    text-decoration: underline;
+	color: #B98D20;
+}
+
+li a:hover {
+	background-color: #FFFDE8;
+	
+}
+
+h1.title_top {
+	font-size:70px;
+	color: #B98D20;
+}
+
+#index_color {
+	background-color: #FFFDE8;
+}
+
+#assign_color {
+	background-color: #FFFDE8;
+}
+
+#about_color {
+	background-color: #FFFDE8;
+}
+
+#proj_color {
+	background-color: #FFFDE8;
+}
