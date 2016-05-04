@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Getting to know you</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form action="../gettingtoknowyou/index.php" method="post" id="gettingtoknowyou_form">
+            <div>
+                <table>
+                    <tr>
+                        <td>Name: </td>
+                        <td><input type="text" id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Email: </td>
+                        <td><input type="text" id="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Major: </td>
+                        <td><input type="radio" name="major" value="Computer Science"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="radio" name="major" value="Web Development and Design" checked></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="radio" name="major" value="Computer Information Technology"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="radio" name="major" value="Computer Engineering"></td>
+                    </tr>
+                    <tr>
+                        <td>Places you have visited: </td>
+                        <td><input type="checkbox" name="places[]" value="n_amer">North America</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="s_amer">South America</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="euro">Europe</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="asia">Asia</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="aust">Australia</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="afri">Africa</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="checkbox" name="places[]" value="anta">Antartica</td>
+                    </tr>
+                    <tr>
+                        <td>Comments: </td>
+                        <td><textarea name="comment" rows="4" cols="50">Please leave a comment!</textarea></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </body>
+</html>
