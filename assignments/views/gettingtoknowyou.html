@@ -11,6 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <form action="../gettingtoknowyou/index.php" method="post" id="gettingtoknowyou_form">
+            <input type="hidden" name="action" value="submit_gettingtoknowyou">
             <div>
                 <table>
                     <tr>
@@ -23,19 +24,19 @@ and open the template in the editor.
                     </tr>
                     <tr>
                         <td>Major: </td>
-                        <td><input type="radio" name="major" value="Computer Science"></td>
+                        <td><input type="radio" name="major" value="Computer Science">Computer Science</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="radio" name="major" value="Web Development and Design" checked></td>
+                        <td><input type="radio" name="major" value="Web Development and Design" checked>Web Development and Design</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="radio" name="major" value="Computer Information Technology"></td>
+                        <td><input type="radio" name="major" value="Computer Information Technology">Computer Information Technology</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><input type="radio" name="major" value="Computer Engineering"></td>
+                        <td><input type="radio" name="major" value="Computer Engineering">Computer Engineering</td>
                     </tr>
                     <tr>
                         <td>Places you have visited: </td>
@@ -68,6 +69,10 @@ and open the template in the editor.
                     <tr>
                         <td>Comments: </td>
                         <td><textarea name="comment" rows="4" cols="50">Please leave a comment!</textarea></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                        <td>&nbsp;</td>
                     </tr>
                 </table>
             </div>
