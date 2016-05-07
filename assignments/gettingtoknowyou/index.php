@@ -37,3 +37,4 @@ if ($action == 'submit_gettingtoknowyou') {
         require ('../views/error.html');
     }
 }
+?>
