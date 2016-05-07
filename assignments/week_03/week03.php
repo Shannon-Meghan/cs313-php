@@ -13,25 +13,43 @@
             "CompE" => "Computer Engineering"
         );
 
-        echo "<p>Name: " . filter_input(INPUT_POST, "name") . "</p>";
-        echo "<p>E-mail: <a href='mailto:" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "' target='_top'>" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "</a></p>";
-        if (isset(filter_INPUT(INPUT_POST, "major"))) {
-            echo "<p>Major: " . $majors[filter_INPUT(INPUT_POST, "major")] . "</p>";
+        $name = filter_input(INPUT_POST, "name");
+
+        if (!preg_match("/^[a-zA-Z ]*$/", $name)) {
+            echo "<p>Name: Only letters and white space allowed </p>";
+        } else {
+            echo "<p>Name: " . $name . "</p>";
+        }
+        
+        $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+        
+        if ($email == NULL || $email == "") {
+            echo "<p>E-mail: Please enter a valid e-mail address </p>";
+        }
+        else {
+                   echo "<p>E-mail: <a href='mailto:" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "' target='_top'>" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "</a></p>";
         }
 
-        if (isset(filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY))) {
+        $major = filter_input(INPUT_POST, "major");
+
+        if ($major != NULL || "") {
+            echo "<p>Major: " . $majors[filter_input(INPUT_POST, "major")] . "</p>";
+        }
+
+        if (isset($_POST["place"])) {
             echo "<p>These are the places you have visited:<br>";
-            if (is_array(filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY))) {
-                foreach (filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY) as $places) {
+            if (is_array($_POST["place"])) {
+                foreach ($_POST["place"] as $places) {
                     echo "&emsp;" . $places . "<br>";
                 }
-            } else{
-                echo "&emsp;" . filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY) . "<br>";
-            }
+            } else
+                echo "&emsp;" . $_POST["place"] . "<br>";
             echo "</p>";
         }
 
-        if (isset(filter_input(INPUT_POST, "comment"))) {
+        $comment = filter_input(INPUT_POST, "comment");
+
+        if ($comment != NULL || $comment != "") {
             echo "<p>Comments:<br>";
             echo filter_input(INPUT_POST, "comment") . "<br>";
             echo "</p>";
