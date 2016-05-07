@@ -13,26 +13,27 @@
             "CompE" => "Computer Engineering"
         );
 
-        echo "<p>Name: " . $_POST["name"] . "</p>";
-        echo "<p>E-mail: <a href='mailto:" . $_POST["email"] . "' target='_top'>" . $_POST["email"] . "</a></p>";
-        if (isset($_POST["major"])) {
-            echo "<p>Major: " . $majors[$_POST["major"]] . "</p>";
+        echo "<p>Name: " . filter_input(INPUT_POST, "name") . "</p>";
+        echo "<p>E-mail: <a href='mailto:" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "' target='_top'>" . filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL) . "</a></p>";
+        if (isset(filter_INPUT(INPUT_POST, "major"))) {
+            echo "<p>Major: " . $majors[filter_INPUT(INPUT_POST, "major")] . "</p>";
         }
 
-        if (isset($_POST["place"])) {
+        if (isset(filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY))) {
             echo "<p>These are the places you have visited:<br>";
-            if (is_array($_POST["place"])) {
-                foreach ($_POST["place"] as $places) {
+            if (is_array(filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY))) {
+                foreach (filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY) as $places) {
                     echo "&emsp;" . $places . "<br>";
                 }
-            } else
-                echo "&emsp;" . $_POST["place"] . "<br>";
+            } else{
+                echo "&emsp;" . filter_input(INPUT_POST, "places", FILTER_REQUIRE_ARRAY) . "<br>";
+            }
             echo "</p>";
         }
 
-        if (isset($_POST["comment"])) {
+        if (isset(filter_input(INPUT_POST, "comment"))) {
             echo "<p>Comments:<br>";
-            echo $_POST["comment"] . "<br>";
+            echo filter_input(INPUT_POST, "comment") . "<br>";
             echo "</p>";
         }
         ?>
