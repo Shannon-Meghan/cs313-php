@@ -1,5 +1,17 @@
-<?php
+<header>
+    <h1 class="title_top">PHP Survey</h1>
+</header>
+<nav>
+    <ul class="nav_ul">
+        <li class="nav_li" id="index_color"><a href="../index.html">Home</a></li>
+        <li class="nav_li"><a href=".../assignments.html">Assignments</a></li>
+        <li class="nav_li"><a href=".../aboutme.html">About Me</a></li>
+        <li class="nav_li"><a href=".../personalproject.html">Project</a></li>
+    </ul>
+</nav>
+<br>
 
+<?php
 $scale_one = filter_input(INPUT_POST, 'scale_one');
 $scale_two = filter_input(INPUT_POST, 'scale_two');
 $amt_visit = filter_input(INPUT_POST, 'amt_visit');
