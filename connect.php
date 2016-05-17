@@ -11,10 +11,15 @@ function dbConnect() {
 
     if ($onOpenShift == null || $onOpenShift == "") {
         //in our localhost environment
+        //$dbHost = '127.0.0.1';
+        //$dbPort = '80';
+        //$dbUser = 'root';
+        //$dbPassword = 'unicorn42';
+        
         $dbHost = '127.0.0.1';
         $dbPort = '80';
-        $dbUser = 'root';
-        $dbPassword = 'unicorn42';
+        $dbUser = 'fandomta_client';
+        $dbPassword = 'o8DOv19~h!kh';
         
         echo ("You are on a local host");
     } else {
@@ -28,7 +33,7 @@ function dbConnect() {
 
     //echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser" ;
 
-    $db = newPDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $db = new PDO("mysql:host=$dbHost:$dbPort;dbname=$dbName", $dbUser, $dbPassword);
     
     return $db;
 }
