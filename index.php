@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,7 +15,7 @@
 				<li class="nav_li" id="index_color"><a href="index.html">Home</a></li>
 				<li class="nav_li"><a href="assignments.html">Assignments</a></li>
 				<li class="nav_li"><a href="aboutme.html">About Me</a></li>
-				<li class="nav_li"><a href="personalproject.html">Project</a></li>
+				<li class="nav_li"><a href="login.html">Project</a></li>
 			</ul>
 		</nav>
 		<img src="spiderweb.jpg" alt="spiderweb" width="800" height="300">
@@ -22,7 +24,7 @@
 		<p>This page holds all my assignments from CIT 313</p>
 		<h2><a href="aboutme.html">About Me</a></h2>
 		<p>This page talks about my schooling and career history.</p>
-		<h2><a href="personalproject.html">Project</a></h2>
+		<h2><a href="./project/game.php">Project</a></h2>
 		<p>This links to my CS313 personal project. It's still in progress.</p>
 	</body>
 </html>
