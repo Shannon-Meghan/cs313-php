@@ -1,14 +1,13 @@
-<?php
-?>
+<?php ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Change Password Page</title>
+        <title>Steps Entry Page</title>
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <header>
-            <h1 class="title_top">Change Password Page</h1>
+            <h1 class="title_top">Steps Entry Page</h1>
         </header>
         <nav>
             <ul class="nav_ul">
@@ -19,18 +18,22 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Change Password Page is under construction.</h2>
-        <form action='./phpindex.php' method='post' name='changepassword_form'>
-            <input type='hidden' name='action' value='changepassword' />
-            <h2>Forgot your password? Reset it:</h2>
-            <table>
+        <form action='./phpindex.php' method='post' id='stepsentry_page'>
+            <input type='hidden' name='action' value='enter_newsteps' />
+            <table>                
                 <tr>
-                    <td>New password:</td>
-                    <td><input type='password' name='new_password'></td>
-                    <td><input type='submit' value='Enter'></td>
+                    <td>Total Steps:</td>
+                    <td><?php echo $totalsteps ?></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Latest Steps:</td>
+                    <td><input type='text' name='new_steps' /></td>
+                    <td><input type='submit' value='Enter' /></td>
                 </tr>
             </table>
         </form>
+        <p><a href='./phpindex.php?action=startover'>Start over!</a></p>
     </body>
 </html>
 

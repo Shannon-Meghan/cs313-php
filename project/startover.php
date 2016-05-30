@@ -1,14 +1,16 @@
 <?php
+
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Change Password Page</title>
+        <title>Steps Entry Page</title>
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <header>
-            <h1 class="title_top">Change Password Page</h1>
+            <h1 class="title_top">Steps Entry Page</h1>
         </header>
         <nav>
             <ul class="nav_ul">
@@ -19,18 +21,14 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Change Password Page is under construction.</h2>
-        <form action='./phpindex.php' method='post' name='changepassword_form'>
-            <input type='hidden' name='action' value='changepassword' />
-            <h2>Forgot your password? Reset it:</h2>
+        <form action='./phpindex.php' method='post' id='startover_form'>
+            <input type='hidden' name='action' value='startover' />
             <table>
                 <tr>
-                    <td>New password:</td>
-                    <td><input type='password' name='new_password'></td>
-                    <td><input type='submit' value='Enter'></td>
+                    <td>Start over?</td>
+                    <td><input type='submit' value='Enter' /></td>
                 </tr>
             </table>
         </form>
     </body>
 </html>
-

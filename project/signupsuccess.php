@@ -1,14 +1,16 @@
 <?php
+
 ?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Change Password Page</title>
+        <title>Sign Up Success</title>
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <header>
-            <h1 class="title_top">Change Password Page</h1>
+            <h1 class="title_top">Sign Up Success Page</h1>
         </header>
         <nav>
             <ul class="nav_ul">
@@ -19,18 +21,12 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Change Password Page is under construction.</h2>
-        <form action='./phpindex.php' method='post' name='changepassword_form'>
-            <input type='hidden' name='action' value='changepassword' />
-            <h2>Forgot your password? Reset it:</h2>
-            <table>
-                <tr>
-                    <td>New password:</td>
-                    <td><input type='password' name='new_password'></td>
-                    <td><input type='submit' value='Enter'></td>
-                </tr>
-            </table>
+        <form action ='./phpindex.php' method='post' id='signupsuccess'>
+            <input type='hidden' name='action' value='stepentry' />
+            <p>You have successfully signed up!</p>
+            <p>Your username is: <?php echo $_SESSION['email']; ?></p>
+            <p>Your password is: <?php echo $_SESSION['password']; ?></p>
+            <input type='submit' value='Start playing!' />
         </form>
     </body>
 </html>
-
