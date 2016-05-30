@@ -24,7 +24,7 @@
 		<p>This page holds all my assignments from CIT 313</p>
 		<h2><a href="aboutme.html">About Me</a></h2>
 		<p>This page talks about my schooling and career history.</p>
-		<h2><a href="./project/game.php">Project</a></h2>
+                <h2><a href="./project/phpindex.php">Project</a></h2>
 		<p>This links to my CS313 personal project. It's still in progress.</p>
 	</body>
 </html>
