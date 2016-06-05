@@ -19,7 +19,7 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Change Password Page is under construction.</h2>
+        <?php echo $error ?>
         <form action='./phpindex.php' method='post' name='changepassword_form'>
             <input type='hidden' name='action' value='changepassword' />
             <h2>Forgot your password? Reset it:</h2>

@@ -80,15 +80,16 @@ switch ($action) {
     case 'signup':
         $new_email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
         $new_password = filter_input(INPUT_POST, 'password');
-        $user_id_array = select_user_id($new_email);
-        if ($user_id_array != NULL && $user_id_array != "") {
-            $count = COUNT($user_id_array);
-            $index = $count - 2;
-            //create loop about array that selects correct column.
-            for ($i = 0; $i <= $index; $i++) {
-                $userid = $user_id_array[$i];
-            }
-        }
+        //$user_id_array = select_user_id($new_email);
+        //if ($user_id_array != NULL && $user_id_array != "") {
+        //    $count = COUNT($user_id_array);
+        //    $index = $count - 2;
+        //    //create loop about array that selects correct column.
+        //    for ($i = 0; $i <= $index; $i++) {
+        //        $userid = $user_id_array[$i];
+        //    }
+        //    $_SESSION['userid'] = $userid;
+        //}
 
         if ($new_email == NULL || $new_email == "" || $new_password == NULL || $new_password == "") {
             $error = "Please input a valid email and password.";
@@ -103,8 +104,20 @@ switch ($action) {
                 //add information into table
                 $_SESSION['email'] = $new_email;
                 $_SESSION['password'] = $new_password;
-                $_SESSION['userid'] = $userid;
+
                 add_user($new_email, $new_password);
+
+                $user_id_array = select_user_id($new_email);
+
+                if ($user_id_array != NULL && $user_id_array != "") {
+                    $count = COUNT($user_id_array);
+                    $index = $count - 2;
+                    //create loop about array that selects correct column.
+                    for ($i = 0; $i <= $index; $i++) {
+                        $userid = $user_id_array[$i];
+                    }
+                    $_SESSION['userid'] = $userid;
+                }
 
                 require './signupsuccess.php';
             }
@@ -113,9 +126,15 @@ switch ($action) {
     case 'changepassword' :
         $userid = $_SESSION['userid'];
         $new_password = filter_input(INPUT_POST, 'new_password');
-        update_password($userid, $new_password);
-        $_SESSION['password'] = $new_password;
-        require('./newpasswordsuccess.php');
+        if ($new_password != "" || $new_password != NULL) {
+            $error = "";
+            update_password($userid, $new_password);
+            $_SESSION['password'] = $new_password;
+            require('./newpasswordsuccess.php');
+        } else {
+            $error = "Please enter a new password.";
+            require ('changepassword.php');
+        }
         break;
     case 'stepentry':
         $email = $_SESSION['email'];
@@ -195,6 +214,7 @@ switch ($action) {
         $user_id = $_SESSION['userid'];
         delete_total_steps($user_id);
         delete_items($user_id);
+        $totalsteps = select_total_steps($user_id);
         require ('./stepsentry.php');
         break;
     case 'game':
@@ -384,6 +404,12 @@ switch ($action) {
         break;
     case 'show_signup':
         require ('./signup.php');
+        break;
+    case 'sendto_stepentry':
+        require ('./stepentry.php');
+        break;
+    case 'show_signin':
+        require ('./sign_in.php');
         break;
 }
 ?>

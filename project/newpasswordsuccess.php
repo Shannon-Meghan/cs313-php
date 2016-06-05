@@ -20,7 +20,6 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Successful Password Chage is under construction.</h2>
         <form action="./phpindex.php" method="post" name="successful_password_change_form">
             <input type='hidden' name='action' value='stepentry'>
             <p>You have successfully change your password! Congratulations!</p>

@@ -4,6 +4,7 @@
 <html>
     <head>
         <title>Sign In Page</title>
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <header>
@@ -19,7 +20,6 @@
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
 
-        <h2>Log In Page is under construction</h2>
         <form action="./phpindex.php" method="post" id='signin_page'>
             <input type="hidden" name="action" value="signin" />
             <?php echo $error ?>

@@ -18,8 +18,6 @@
             </ul>
         </nav>
         <img src="../spiderweb.jpg" alt="spiderweb" width="800" height="300">
-        <h2>Sign Up Page is under construction.</h2>
-
         <form action="./phpindex.php" method="post">
             <input type="hidden" name="action" value="signup" />
             <?php echo $error ?>
